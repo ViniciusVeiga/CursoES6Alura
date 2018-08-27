@@ -6,18 +6,20 @@ class NegocioController {
         this._inputdata =  $('#data');
         this._inputquantidade =  $('#quantidade');
         this._inputvalor =  $('#valor');
-        this._negocios = new ListMLNegocio();
+        this._ListNegocio = new ListMLNegocio();
+        this._VWNegocio = new VWNegocio($('VWNegocio'));
+
+        this._VWNegocio.update();
     }
 
     //#region Salvar Negocio
 
     salvar(e) {
         e.preventDefault();
-
-        this._negocios.add(_criar());
+        
+        this._ListNegocio.add(_criar());
+        this._VWNegocio.update(this._ListNegocio)
         this._limpar();
-
-        console.log(this._negocios.negocio)
     }
 
     //#endregion
@@ -26,7 +28,7 @@ class NegocioController {
 
     _criar() {
         return new MLNegocio (
-            DataHelper.converterTextoData(this._inputdata.value),
+            DataHelper.toData(this._inputdata.value),
             this._inputquantidade.value,
             this._inputvalor.value
         );

@@ -6,7 +6,7 @@ class DataHelper {
 
     //#region Metodos
 
-    static converterTextoData(texto) {
+    static toData(texto) {
 
         if(!/\d{4}-\d{2}-\d{2}/.test(texto)) {
             throw new Error('Receber no formato AAAA-MM-DD');
@@ -18,7 +18,7 @@ class DataHelper {
         }));
     }
 
-    static converterDataTexto(data) {
+    static toTexto(data) {
         return `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`;
     }
 
