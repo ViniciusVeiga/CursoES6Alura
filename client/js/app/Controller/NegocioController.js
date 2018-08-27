@@ -14,9 +14,7 @@ class NegocioController {
     salvar(e) {
         e.preventDefault();
 
-        let negocio = _criar();
-
-        this._negocios.add(negocio);
+        this._negocios.add(_criar());
         this._limpar();
 
         console.log(this._negocios.negocio)

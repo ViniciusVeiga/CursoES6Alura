@@ -9,8 +9,8 @@ class ListMLNegocio {
         this._negocios.push(negocio);
     }
 
-    get negocio() {
-        return this._negocios;
+    get negocios() {
+        return [].concat(this._negocios);
     }
 
     //#endregion
