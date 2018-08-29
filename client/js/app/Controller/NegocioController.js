@@ -2,23 +2,27 @@ class NegocioController {
 
     constructor() {
         let $ = document.querySelector.bind(document);
-
+        
+        // Propriedades
         this._inputdata =  $('#data');
         this._inputquantidade =  $('#quantidade');
         this._inputvalor =  $('#valor');
         this._ListNegocio = new ListMLNegocio();
+        
+        // View
         this._VWNegocio = new VWNegocio($('#VWNegocio'));
-
         this._VWNegocio.update(this._ListNegocio);
     }
 
     //#region Salvar Negocio
 
-    salvar(e) {
-        e.preventDefault();
+    salvar(event) {
+        event.preventDefault();
 
-        this._ListNegocio.add(_criar());
+        this._ListNegocio.add(this._criar());
         this._VWNegocio.update(this._ListNegocio)
+
+        console.log(this.ListMLNegocio);
         this._limpar();
     }
 

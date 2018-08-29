@@ -5,7 +5,7 @@ class VWNegocio {
     }
 
     _template(model) {
-        return (`
+        return `
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -16,23 +16,22 @@ class VWNegocio {
                 </tr>
             </thead>
             <tbody>
-            ${model._negocios.map(n => {
-                return `
-                
+            ${model._negocios.map(n => 
+                 `
                   <tr>
-                      <td>${DateHelper.dataParaTexto(n.data)}</td>
+                      <td>${DataHelper.toTexto(n.data)}</td>
                       <td>${n.quantidade}</td>
                       <td>${n.valor}</td>
                       <td>${n.volume}</td>
                   </tr>
                 `
-            }).join('')}
+            ).join('')}
             </tbody>
 
             <tfoot>
             </tfoot>
         </table>
-        `);
+        `;
     }
 
     update(model) {
