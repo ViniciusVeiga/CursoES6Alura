@@ -18,6 +18,7 @@ class VWNegocio {
             <tbody>
             ${model._negocios.map(n => {
                 return `
+                
                   <tr>
                       <td>${DateHelper.dataParaTexto(n.data)}</td>
                       <td>${n.quantidade}</td>
