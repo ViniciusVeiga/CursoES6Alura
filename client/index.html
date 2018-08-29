@@ -11,6 +11,10 @@
     
     <h1 class="text-center">Negociações</h1>
     
+    <!--Mensagem-->
+    <div id="mensagem"></div>
+
+    <!--Formulario-->
     <form class="form" onsubmit="Negocio.salvar(event)">
         
         <div class="form-group">
@@ -42,13 +46,26 @@
     <br>
     <br>
 
-    <div id="VWNegocio"></div>
-    
-    <script src="js/app/Model/MLNegocio.js"></script>
+    <!--Tabela-->
+    <div id="tabela"></div>
+
+    <!--Controller-->
     <script src="js/app/Controller/NegocioController.js"></script>
+
+    <!--Helper-->
     <script src="js/app/Helper/DataHelper.js"></script>
+
+    <!--Model-->
     <script src="js/app/Model/ListMLNegocio.js"></script>
+    <script src="js/app/Model/MLMensagem.js"></script>
+    <script src="js/app/Model/MLNegocio.js"></script>
+    
+    <!--View-->
+    <script src="js/app/View/View.js"></script>
     <script src="js/app/View/Negocio/VWNegocio.js"></script>
+    <script src="js/app/View/Mensagem/VWMensagem.js"></script>
+
+
     <script>
         let Negocio = new NegocioController();
     </script>

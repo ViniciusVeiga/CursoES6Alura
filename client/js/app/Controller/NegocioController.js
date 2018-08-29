@@ -7,10 +7,14 @@ class NegocioController {
         this._inputdata =  $('#data');
         this._inputquantidade =  $('#quantidade');
         this._inputvalor =  $('#valor');
-        this._ListNegocio = new ListMLNegocio();
         
+        // Controller
+        this._ListNegocio = new ListMLNegocio();
+        this._MLMensagem = new MLMensagem();
+
         // View
-        this._VWNegocio = new VWNegocio($('#VWNegocio'));
+        this._VWMensagem = new VWMensagem($('#mensagem'));
+        this._VWNegocio = new VWNegocio($('#tabela'));
         this._VWNegocio.update(this._ListNegocio);
     }
 
@@ -19,10 +23,14 @@ class NegocioController {
     salvar(event) {
         event.preventDefault();
 
+        // Negocio
         this._ListNegocio.add(this._criar());
         this._VWNegocio.update(this._ListNegocio)
 
-        console.log(this.ListMLNegocio);
+        // Mensagem
+        this._MLMensagem.texto = 'Salvo com sucesso !';
+        this._VWMensagem.update(this._MLMensagem);
+        
         this._limpar();
     }
 

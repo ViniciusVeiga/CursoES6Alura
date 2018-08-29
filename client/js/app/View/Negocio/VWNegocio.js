@@ -1,7 +1,7 @@
-class VWNegocio {
-    
+class VWNegocio extends View {
+
     constructor(elemento) {
-        this._elemento = elemento;
+        super(elemento);
     }
 
     _template(model) {
@@ -27,14 +27,13 @@ class VWNegocio {
                 `
             ).join('')}
             </tbody>
-
+                <td colspan="3"><strong>TOTAL:</strong></td>
+                <td>
+                   ${model._negocios.reduce((total, n) => total + n.volume, 0.0)}
+                </td>
             <tfoot>
             </tfoot>
         </table>
         `;
-    }
-
-    update(model) {
-        return this._elemento.innerHTML = this._template(model);
     }
 }
